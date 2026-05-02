@@ -9,6 +9,9 @@
   <meta property="og:description" content="Portfolio of Python, AI/ML, OCR, NLP, and backend projects by Durgam Surya Prakash.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://24211a6639-ops.github.io/">
+  <meta property="og:image" content="https://24211a6639-ops.github.io/assets/portfolio-share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://24211a6639-ops.github.io/">
   <title>Durgam Surya Prakash | Python & AI/ML Developer</title>
   <style>
     :root {
@@ -60,7 +63,7 @@
     }
 
     .nav {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1120px, calc(100vw - 32px));
       min-height: 72px;
       margin: 0 auto;
       display: flex;
@@ -117,7 +120,7 @@
     }
 
     .section-shell {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1120px, calc(100vw - 32px));
       margin: 0 auto;
     }
 
@@ -128,6 +131,10 @@
       align-items: center;
       gap: 48px;
       padding: 64px 0 56px;
+    }
+
+    .hero > * {
+      min-width: 0;
     }
 
     .eyebrow {
@@ -224,6 +231,7 @@
     .hero-points li {
       display: flex;
       gap: 10px;
+      min-width: 0;
     }
 
     .hero-points li::before {
@@ -242,6 +250,7 @@
       background: var(--panel);
       box-shadow: var(--shadow);
       overflow: hidden;
+      min-width: 0;
     }
 
     .preview-top {
@@ -276,6 +285,7 @@
 
     .preview-body {
       padding: 24px;
+      min-width: 0;
     }
 
     .preview-title {
@@ -368,7 +378,7 @@
     }
 
     .stats-grid {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1120px, calc(100vw - 32px));
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -495,6 +505,28 @@
       flex: 0 0 auto;
     }
 
+    .project-media {
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+
+    .project-shot {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0f172a;
+    }
+
+    .project-media figcaption {
+      margin-top: 8px;
+      color: var(--soft);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .project-actions {
       display: flex;
       gap: 10px;
@@ -521,6 +553,35 @@
       border-color: var(--blue);
       background: rgba(100, 181, 255, 0.08);
       outline: none;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .profile-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 24px;
+      min-height: 246px;
+    }
+
+    .profile-card h3 {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .profile-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .profile-card strong {
+      color: var(--green);
     }
 
     .skills-grid {
@@ -642,7 +703,7 @@
     }
 
     .footer {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1120px, calc(100vw - 32px));
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -664,6 +725,10 @@
       }
 
       .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-grid {
         grid-template-columns: 1fr;
       }
 
@@ -690,6 +755,17 @@
 
       .hero {
         padding: 46px 0 42px;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: 35px;
+        line-height: 1.08;
+        overflow-wrap: break-word;
+      }
+
+      .hero-copy {
+        font-size: 16px;
       }
 
       .actions .btn {
@@ -720,6 +796,25 @@
         flex-direction: column;
       }
     }
+
+    @media (max-width: 420px) {
+      .section-shell,
+      .stats-grid,
+      .footer {
+        width: min(342px, calc(100vw - 32px));
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .hero-copy,
+      .hero-points,
+      .actions,
+      .project-preview {
+        max-width: min(342px, calc(100vw - 32px));
+      }
+    }
   </style>
 </head>
 <body>
@@ -732,6 +827,7 @@
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#profile">Profile</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
@@ -750,13 +846,15 @@
         <div class="actions">
           <a class="btn btn-primary" href="assets/Durgam_Surya_Prakash_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
           <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="https://github.com/24211a6639-ops" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/durgamsurya-prakash-1a0114362" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="mailto:suryaprakash22330@gmail.com">Email Me</a>
         </div>
 
         <ul class="hero-points" aria-label="Quick highlights">
           <li>Python, Streamlit, Scikit-learn, PyPDF2, OpenCV, REST APIs, and GitHub.</li>
           <li>Focused on readable code, useful UI, validation, logging, and deployable projects.</li>
-          <li>Based in Telangana and ready for internship opportunities.</li>
+          <li>Portfolio link ready for resume, GitHub profile, LinkedIn Featured, and internship applications.</li>
         </ul>
       </div>
 
@@ -824,6 +922,10 @@
           <div class="project-label">Live dashboard</div>
           <h3>AI Resume Analyzer</h3>
           <div class="stack">Python, Streamlit, Scikit-learn, Plotly, PyPDF2, python-docx</div>
+          <figure class="project-media">
+            <img class="project-shot" src="assets/ai-resume-analyzer-demo.gif" alt="Demo GIF of the AI Resume Analyzer upload, scoring dashboard, and action plan.">
+            <figcaption>Short demo: upload resume, review score, act on skill-gap recommendations.</figcaption>
+          </figure>
           <ul>
             <li>Parses PDF and DOCX resumes and compares them against a job description.</li>
             <li>Shows match score, matched skills, missing skills, ATS checks, and action steps.</li>
@@ -839,6 +941,10 @@
           <div class="project-label">Automation</div>
           <h3>Binance Futures Testnet Trading Bot</h3>
           <div class="stack">Python, CLI, python-binance, dotenv, logging</div>
+          <figure class="project-media">
+            <img class="project-shot" src="assets/trading-bot-terminal.png" alt="Terminal screenshot showing the trading bot placing a validated Binance Futures Testnet order.">
+            <figcaption>Terminal proof: validated LIMIT order flow with structured logging.</figcaption>
+          </figure>
           <ul>
             <li>Places market and limit orders on Binance Futures Testnet through a clean CLI.</li>
             <li>Validates symbol, side, order type, quantity, and limit price before requests.</li>
@@ -853,6 +959,10 @@
           <div class="project-label">Computer vision</div>
           <h3>AI Document Extraction System</h3>
           <div class="stack">Python, OpenCV, Tesseract OCR, image preprocessing</div>
+          <figure class="project-media">
+            <img class="project-shot" src="assets/doc-ai-ocr-pipeline.png" alt="OCR pipeline screenshot showing scanned input, preprocessing, and structured output.">
+            <figcaption>Pipeline proof: scanned input moves through preprocessing into structured output.</figcaption>
+          </figure>
           <ul>
             <li>Extracts structured text from scanned documents and low-quality images.</li>
             <li>Improves OCR quality with noise removal, binarization, deskewing, and contrast handling.</li>
@@ -861,6 +971,32 @@
           <div class="project-actions">
             <a class="mini-link" href="https://github.com/24211a6639-ops/doc-ai-ocr" target="_blank" rel="noopener">GitHub</a>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="profile" aria-labelledby="profile-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="profile-title">Recruiter Profile System</h2>
+        </div>
+        <p>Everything points to the same proof stack: portfolio, project demos, GitHub repositories, resume, and LinkedIn.</p>
+      </div>
+
+      <div class="profile-grid">
+        <article class="profile-card">
+          <h3>Portfolio Link</h3>
+          <p><strong>24211a6639-ops.github.io</strong> is the main public link to place in GitHub bio, LinkedIn Featured, resume header, and job applications.</p>
+        </article>
+
+        <article class="profile-card">
+          <h3>GitHub Upgrade</h3>
+          <p>Pin the three strongest repositories and use README demo media so visitors see output before reading code.</p>
+        </article>
+
+        <article class="profile-card">
+          <h3>LinkedIn Upgrade</h3>
+          <p>Feature the portfolio, AI Resume Analyzer demo, and resume PDF; keep the headline focused on Python, AI/ML, and internships.</p>
         </article>
       </div>
     </section>
@@ -964,6 +1100,12 @@
             <div>
               <span>GitHub</span>
               <strong>24211a6639-ops</strong>
+            </div>
+          </a>
+          <a class="contact-card" href="https://24211a6639-ops.github.io/" target="_blank" rel="noopener">
+            <div>
+              <span>Portfolio</span>
+              <strong>24211a6639-ops.github.io</strong>
             </div>
           </a>
         </div>

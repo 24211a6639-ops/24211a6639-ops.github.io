@@ -10,6 +10,8 @@ This repository powers the public GitHub Pages portfolio for Durgam Surya Prakas
 
 - `index.html` is the homepage, so visitors can open the clean GitHub Pages URL.
 - The page includes resume, projects, skills, education, and contact sections.
+- Project cards now include visual proof: an AI Resume Analyzer demo GIF plus terminal/OCR preview images.
+- Social sharing metadata uses `assets/portfolio-share.png` for a stronger GitHub/LinkedIn preview card.
 - The resume PDF is stored in `assets/Durgam_Surya_Prakash_Resume.pdf`.
 - Text encoding issues were cleaned up for a professional public page.
 
