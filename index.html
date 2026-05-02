@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Durgam Surya Prakash is a Python Developer and B.Tech CSE AI/ML student building AI resume analyzers, OCR pipelines, and backend automation tools.">
+  <meta name="author" content="Durgam Surya Prakash">
+  <meta property="og:title" content="Durgam Surya Prakash | Python & AI/ML Developer">
+  <meta property="og:description" content="Portfolio of Python, AI/ML, OCR, NLP, and backend projects by Durgam Surya Prakash.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://24211a6639-ops.github.io/">
+  <title>Durgam Surya Prakash | Python & AI/ML Developer</title>
+  <style>
+    :root {
+      --bg: #090b10;
+      --panel: #111722;
+      --panel-strong: #151d2a;
+      --text: #edf2f7;
+      --muted: #a7b3c4;
+      --soft: #6d7a8d;
+      --line: #243044;
+      --blue: #64b5ff;
+      --green: #38d996;
+      --amber: #f7c948;
+      --danger: #ff7a7a;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(9, 11, 16, 0.88);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(1120px, calc(100% - 32px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--panel);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+      padding: 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 160ms ease, background 160ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: var(--panel);
+      color: var(--text);
+      outline: none;
+    }
+
+    .section-shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: min(760px, calc(100svh - 72px));
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+      align-items: center;
+      gap: 48px;
+      padding: 64px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 32px;
+      padding: 0 12px;
+      border: 1px solid rgba(56, 217, 150, 0.4);
+      border-radius: 999px;
+      background: rgba(56, 217, 150, 0.08);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(56, 217, 150, 0.12);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-top: 22px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.02;
+      font-weight: 850;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: clamp(17px, 2.4vw, 20px);
+    }
+
+    .hero-copy strong {
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 750;
+      font-size: 14px;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+      outline: none;
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: var(--blue);
+      color: #07111f;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: #82c6ff;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+      color: var(--soft);
+      font-size: 14px;
+      list-style: none;
+    }
+
+    .hero-points li {
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero-points li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-top: 9px;
+      background: var(--amber);
+      flex: 0 0 auto;
+    }
+
+    .project-preview {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel-strong);
+    }
+
+    .preview-kicker {
+      color: var(--soft);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(56, 217, 150, 0.12);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .preview-body {
+      padding: 24px;
+    }
+
+    .preview-title {
+      font-size: 22px;
+      font-weight: 850;
+    }
+
+    .preview-text {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 26px;
+    }
+
+    .score-ring {
+      width: 150px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        conic-gradient(var(--green) 0 313deg, #263449 313deg 360deg);
+      position: relative;
+    }
+
+    .score-ring::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .score-value {
+      position: relative;
+      z-index: 1;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .score-meta {
+      display: grid;
+      gap: 12px;
+    }
+
+    .score-meta strong {
+      color: var(--green);
+      font-size: 17px;
+    }
+
+    .score-meta span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .chip.match {
+      border-color: rgba(56, 217, 150, 0.35);
+      color: var(--green);
+      background: rgba(56, 217, 150, 0.08);
+    }
+
+    .stats {
+      border-block: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0d1118;
+    }
+
+    .stats-grid {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .stat {
+      min-height: 128px;
+      padding: 24px;
+      background: #0d1118;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--text);
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section.content-section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card,
+    .skill-card,
+    .education-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+      padding: 24px;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(100, 181, 255, 0.75);
+    }
+
+    .project-card.featured {
+      border-color: rgba(56, 217, 150, 0.45);
+    }
+
+    .project-label {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin-top: 14px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .stack {
+      margin-top: 10px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .project-card ul {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 24px;
+      color: var(--muted);
+      font-size: 14px;
+      list-style: none;
+    }
+
+    .project-card li {
+      display: flex;
+      gap: 10px;
+    }
+
+    .project-card li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex: 0 0 auto;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .mini-link {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 800;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .mini-link:hover,
+    .mini-link:focus-visible {
+      border-color: var(--blue);
+      background: rgba(100, 181, 255, 0.08);
+      outline: none;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .skill-card {
+      min-height: 238px;
+      padding: 22px;
+    }
+
+    .skill-card h3 {
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .skill-card ul {
+      display: grid;
+      gap: 9px;
+      margin-top: 16px;
+      color: var(--muted);
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .skill-card li {
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 18px;
+    }
+
+    .education-card {
+      padding: 26px;
+    }
+
+    .education-card h3 {
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .education-card p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .education-meta {
+      margin-top: 16px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .contact-band {
+      padding: 82px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0d1118;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .contact-grid h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.08;
+    }
+
+    .contact-grid p {
+      max-width: 520px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 74px;
+      padding: 18px;
+      transition: border-color 160ms ease, transform 160ms ease;
+    }
+
+    .contact-card:hover,
+    .contact-card:focus-visible {
+      transform: translateX(4px);
+      border-color: var(--green);
+      outline: none;
+    }
+
+    .contact-card span {
+      color: var(--soft);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-top: 2px;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .footer {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 26px 0;
+      color: var(--soft);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .contact-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .nav-links a {
+        padding: 0 8px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 46px 0 42px;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+
+      .score-row,
+      .stats-grid,
+      .skills-grid,
+      .section-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        display: grid;
+      }
+
+      section.content-section,
+      .contact-band {
+        padding: 56px 0;
+      }
+
+      .score-ring {
+        width: 132px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Durgam Surya Prakash home">
+        <span class="brand-mark">DSP</span>
+        <span>Durgam Surya Prakash</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow"><span class="status-dot"></span>Open to Python developer internships</div>
+        <h1 id="hero-title">Python & AI/ML Developer building practical automation tools.</h1>
+        <p class="hero-copy">
+          I am <strong>Durgam Surya Prakash</strong>, a B.Tech CSE (AI/ML) student at BVRIT. I build Python projects that solve real problems: resume matching, OCR extraction, API automation, validation, and clean dashboards.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="assets/Durgam_Surya_Prakash_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="mailto:suryaprakash22330@gmail.com">Email Me</a>
+        </div>
+
+        <ul class="hero-points" aria-label="Quick highlights">
+          <li>Python, Streamlit, Scikit-learn, PyPDF2, OpenCV, REST APIs, and GitHub.</li>
+          <li>Focused on readable code, useful UI, validation, logging, and deployable projects.</li>
+          <li>Based in Telangana and ready for internship opportunities.</li>
+        </ul>
+      </div>
+
+      <aside class="project-preview" aria-label="Featured AI Resume Analyzer preview">
+        <div class="preview-top">
+          <div>
+            <div class="preview-kicker">Featured project</div>
+            <strong>AI Resume Analyzer</strong>
+          </div>
+          <span class="live-pill"><span class="status-dot"></span>Live</span>
+        </div>
+        <div class="preview-body">
+          <div class="preview-title">Resume to job-fit scoring</div>
+          <p class="preview-text">
+            A Streamlit dashboard that compares resumes with job descriptions, extracts skills, scores fit, and suggests improvements.
+          </p>
+          <div class="score-row">
+            <div class="score-ring" aria-label="Example job fit score 87 percent">
+              <span class="score-value">87%</span>
+            </div>
+            <div class="score-meta">
+              <strong>Strong match</strong>
+              <span>TF-IDF similarity, skill-gap detection, ATS checks, and role-based recommendations.</span>
+            </div>
+          </div>
+          <div class="chips" aria-label="Project skills">
+            <span class="chip match">Python</span>
+            <span class="chip match">NLP</span>
+            <span class="chip match">Streamlit</span>
+            <span class="chip match">Scikit-learn</span>
+            <span class="chip">PDF parsing</span>
+            <span class="chip">ATS checks</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats" aria-label="Portfolio highlights">
+      <div class="stats-grid">
+        <div class="stat">
+          <strong>3+</strong>
+          <span>Python projects with real workflows, validation, and documentation.</span>
+        </div>
+        <div class="stat">
+          <strong>AI/ML</strong>
+          <span>NLP matching, OCR preprocessing, resume parsing, and ML scoring.</span>
+        </div>
+        <div class="stat">
+          <strong>2024-2028</strong>
+          <span>B.Tech CSE (AI/ML), BV Raju Institute of Technology.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="projects-title">Project Proof</h2>
+        </div>
+        <p>Each project is written to show practical engineering: clear inputs, useful outputs, error handling, documentation, and deployable code.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card featured">
+          <div class="project-label">Live dashboard</div>
+          <h3>AI Resume Analyzer</h3>
+          <div class="stack">Python, Streamlit, Scikit-learn, Plotly, PyPDF2, python-docx</div>
+          <ul>
+            <li>Parses PDF and DOCX resumes and compares them against a job description.</li>
+            <li>Shows match score, matched skills, missing skills, ATS checks, and action steps.</li>
+            <li>Uses role-specific scoring for Python Developer, AI/ML Engineer, Data Analyst, Web Developer, and Backend Developer.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="mini-link" href="https://ai-resume-analyzer.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+            <a class="mini-link" href="https://github.com/24211a6639-ops/ai-resume-analyzer" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Automation</div>
+          <h3>Binance Futures Testnet Trading Bot</h3>
+          <div class="stack">Python, CLI, python-binance, dotenv, logging</div>
+          <ul>
+            <li>Places market and limit orders on Binance Futures Testnet through a clean CLI.</li>
+            <li>Validates symbol, side, order type, quantity, and limit price before requests.</li>
+            <li>Separates API client, order logic, validation, logging, and command-line flow.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="mini-link" href="https://github.com/24211a6639-ops/binance-futures-testnet-trading-bot" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Computer vision</div>
+          <h3>AI Document Extraction System</h3>
+          <div class="stack">Python, OpenCV, Tesseract OCR, image preprocessing</div>
+          <ul>
+            <li>Extracts structured text from scanned documents and low-quality images.</li>
+            <li>Improves OCR quality with noise removal, binarization, deskewing, and contrast handling.</li>
+            <li>Built as reusable batch-processing components for downstream workflows.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="mini-link" href="https://github.com/24211a6639-ops/doc-ai-ocr" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="skills-title">Technical Skills</h2>
+        </div>
+        <p>A compact view of the skills recruiters should understand in the first scan.</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>Python</h3>
+          <ul>
+            <li>OOP and modular scripts</li>
+            <li>CLI tools and validation</li>
+            <li>Exception handling</li>
+            <li>Logging and config files</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>AI / ML</h3>
+          <ul>
+            <li>Scikit-learn</li>
+            <li>TF-IDF and cosine similarity</li>
+            <li>NLP skill matching</li>
+            <li>Feature engineering basics</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Data & Documents</h3>
+          <ul>
+            <li>Pandas and NumPy</li>
+            <li>PyPDF2 and python-docx</li>
+            <li>OpenCV preprocessing</li>
+            <li>Tesseract OCR</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Web & Tools</h3>
+          <ul>
+            <li>Streamlit dashboards</li>
+            <li>REST API integration</li>
+            <li>Git and GitHub</li>
+            <li>Deployment documentation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="education" aria-labelledby="education-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="education-title">Education</h2>
+        </div>
+        <p>Academic path and current learning focus.</p>
+      </div>
+
+      <div class="education-grid">
+        <article class="education-card">
+          <h3>B.Tech - Computer Science and Engineering (Artificial Intelligence & Machine Learning)</h3>
+          <p>BV Raju Institute of Technology (BVRIT), Narsapur, Telangana.</p>
+          <p>Second-year student building practical Python and AI projects alongside coursework.</p>
+          <div class="education-meta">September 2024 - April 2028</div>
+        </article>
+
+        <article class="education-card">
+          <h3>Certification</h3>
+          <p>Career Essentials in Generative AI from LinkedIn Learning.</p>
+          <div class="education-meta">Issued 2024</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="section-shell contact-grid">
+        <div>
+          <h2 id="contact-title">Let us build something useful.</h2>
+          <p>I am looking for internships where I can contribute to Python, AI/ML, automation, or backend projects and keep learning from real engineering teams.</p>
+        </div>
+
+        <div class="contact-list">
+          <a class="contact-card" href="mailto:suryaprakash22330@gmail.com">
+            <div>
+              <span>Email</span>
+              <strong>suryaprakash22330@gmail.com</strong>
+            </div>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/durgamsurya-prakash-1a0114362" target="_blank" rel="noopener">
+            <div>
+              <span>LinkedIn</span>
+              <strong>durgamsurya-prakash</strong>
+            </div>
+          </a>
+          <a class="contact-card" href="https://github.com/24211a6639-ops" target="_blank" rel="noopener">
+            <div>
+              <span>GitHub</span>
+              <strong>24211a6639-ops</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Durgam Surya Prakash</span>
+    <span>Python Developer | AI/ML Student | Telangana</span>
+  </footer>
+</body>
+</html>
